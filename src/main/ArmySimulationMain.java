@@ -4,7 +4,7 @@ public class ArmySimulationMain {
 
 	public void commandLineSimulation() {
 		System.out.println("-------------------------------------");
-		System.out.println("Command Line Simmulation");
+		System.out.println("Command Line Simulation");
 		System.out.println("-------------------------------------\n");
 
 		Scanner sc = new Scanner(System.in);
@@ -30,8 +30,16 @@ public class ArmySimulationMain {
 
 		Army army2 = new Army(numFootSoldiers, numTanks, numPlanes);
 
-		System.out.println(army1);
-		System.out.println(army2);
+		System.out.println("Simulating Battle");
+		System.out.println("-------------------------------------");
+
+		Battle battle = new Battle(army1, army2);
+		int day = 1;
+		while (!battle.isFinished()) {
+			battle.step();
+			System.out.println(battle);
+		}
+
 	}
 
 	public void visualSimulation() {
