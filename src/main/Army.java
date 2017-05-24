@@ -1,3 +1,5 @@
+import java.lang.Math;
+
 public class Army {
 	private int numFootSoldiers;
 	private int numTanks;
@@ -29,20 +31,14 @@ public class Army {
 		return numPlanes;
 	}
 
-	public void setNumFootSoldiers(int numFootSoldiers) {
-		this.numFootSoldiers = numFootSoldiers;
-	}
-
-	public void setNumTanks(int numTanks) {
-		this.numTanks = numTanks;
-	}
-
-	public void setNumPlanes(int numPlanes) {
-		this.numPlanes = numPlanes;
+	public void takeDamage(int footSoldiersDamage, int tanksDamage, int planesDamage) {
+		numFootSoldiers = Math.max(numFootSoldiers - footSoldiersDamage, 0);
+		numTanks = Math.max(numTanks - tanksDamage, 0);
+		numPlanes = Math.max(numPlanes - planesDamage, 0);
 	}
 
 	public String toString() {
-		return "Army has: " + numFootSoldiers + " foot soldiers, " + numTanks
+		return numFootSoldiers + " foot soldiers, " + numTanks
 		 	    + " tanks, and " + numPlanes + " planes.";
 
 	}

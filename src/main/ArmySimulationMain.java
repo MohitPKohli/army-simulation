@@ -35,9 +35,10 @@ public class ArmySimulationMain {
 
 		Battle battle = new Battle(army1, army2);
 		int day = 1;
+		System.out.println(battle + "\n");
 		while (!battle.isFinished()) {
 			battle.step();
-			System.out.println(battle);
+			System.out.println(battle + "\n");
 		}
 
 	}
