@@ -54,7 +54,8 @@ public class ArmySimulationMain {
 	}
 
 	public void visualSimulation() {
-		return;
+		ArmySimulationFrame frame = new ArmySimulationFrame();
+		frame.setVisible(true);
 	}
 
 	public static void main(String[] args) {
