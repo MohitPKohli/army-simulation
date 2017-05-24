@@ -12,9 +12,6 @@ import javax.swing.JOptionPane;
 
 public class UserInputPanel extends JPanel {
 
-	private JTextField numFootSoldiers1, numFootSoldiers2;
-	private JTextField numTanks1, numTanks2;
-	private JTextField numPlanes1, numPlanes2;
 	private JButton start;
 	private JTextField[] fields; 
 	
