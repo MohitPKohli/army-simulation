@@ -44,9 +44,14 @@ public class UserInputPanel extends JPanel {
 		int[] input = new int[6];
 		for (int i = 0; i < input.length; i++) {
 			try{
-			  input[i] = Integer.parseInt(fields[i].getText());
+			  	input[i] = Integer.parseInt(fields[i].getText());
+			  	if (input[i] < 0) {
+			  		JOptionPane.showMessageDialog(null, "Text fields will only accept positive integers.", 
+											  "Array Simulation Error", JOptionPane.INFORMATION_MESSAGE);
+					return null;
+			  }
 			} catch (NumberFormatException e) {
-				JOptionPane.showMessageDialog(null, "Text fields will only accept integers.", 
+				JOptionPane.showMessageDialog(null, "Text fields will only accept valid integers.", 
 											  "Array Simulation Error", JOptionPane.INFORMATION_MESSAGE);
 				return null;
 			}

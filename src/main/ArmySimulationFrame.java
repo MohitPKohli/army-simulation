@@ -1,8 +1,10 @@
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.CardLayout;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.UIManager;
 
 public class ArmySimulationFrame extends JFrame implements ActionListener{
 
@@ -23,6 +25,12 @@ public class ArmySimulationFrame extends JFrame implements ActionListener{
 		mainPanel.add(card1, "User input panel");
 		mainPanel.add(card2, "Simulation panel");
 		add(mainPanel);
+
+		try { 
+		    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+		    // Changing look and feel failed
+		}
 	}
 
 	@Override
@@ -61,7 +69,11 @@ public class ArmySimulationFrame extends JFrame implements ActionListener{
     }
 
     private void displayWinner() {
-
+		if (army1.isDefeated() && army2.isDefeated())
+			JOptionPane.showMessageDialog(null, "The battle was a draw!", "Army Simulation Result", JOptionPane.INFORMATION_MESSAGE);
+		else if (army2.isDefeated())
+			JOptionPane.showMessageDialog(null, "Army 1 is victorious!", "Army Simulation Result", JOptionPane.INFORMATION_MESSAGE);
+		else
+			JOptionPane.showMessageDialog(null, "Army 2 is victorious!", "Army Simulation Result", JOptionPane.INFORMATION_MESSAGE);
     }
-
 }

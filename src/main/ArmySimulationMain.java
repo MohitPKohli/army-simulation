@@ -49,8 +49,6 @@ public class ArmySimulationMain {
 			System.out.println("Army 1 is victorious!");
 		else
 			System.out.println("Army 2 is victorious!");
-
-
 	}
 
 	public void visualSimulation() {
