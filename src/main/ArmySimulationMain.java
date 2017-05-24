@@ -7,6 +7,7 @@ public class ArmySimulationMain {
 		System.out.println("Command Line Simulation");
 		System.out.println("-------------------------------------\n");
 
+		// Gather user input
 		Scanner sc = new Scanner(System.in);
 		System.out.println("How many foot soldiers are in army 1?");
 		int numFootSoldiers = sc.nextInt();
@@ -41,6 +42,15 @@ public class ArmySimulationMain {
 			System.out.println(battle + "\n");
 		}
 
+		// Display Winner
+		if (army1.isDefeated() && army2.isDefeated())
+			System.out.println("The battle was a draw!");
+		else if (army2.isDefeated())
+			System.out.println("Army 1 is victorious!");
+		else
+			System.out.println("Army 2 is victorious!");
+
+
 	}
 
 	public void visualSimulation() {
@@ -51,9 +61,12 @@ public class ArmySimulationMain {
 		ArmySimulationMain simulation = new ArmySimulationMain();
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to army simulation by Mohit Kohli!");
-		System.out.println("Do you want to use visual mode? (Type Y or N)");
-		String mode = sc.next();
-		if(mode.equals("Y")) {
+		String mode = "";
+		while (!(mode.equalsIgnoreCase("Y") || mode.equalsIgnoreCase("N"))) {
+			System.out.println("Do you want to use visual mode? (Type Y or N)");
+			mode = sc.next();
+		}
+		if(mode.equalsIgnoreCase("Y")) {
 			simulation.visualSimulation();
 		}
 		else {
