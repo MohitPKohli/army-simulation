@@ -16,7 +16,7 @@ public class ArmySimulationFrame extends JFrame implements ActionListener{
 
 	public ArmySimulationFrame() {
 		setTitle("Army Simulation");
-        setSize(750, 750);
+        setSize(450, 250);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         card1 = new UserInputPanel(this);

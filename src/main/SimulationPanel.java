@@ -1,33 +1,38 @@
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 import java.lang.Integer;
 import javax.swing.JOptionPane;
+import javax.swing.BorderFactory;
 
 
 public class SimulationPanel extends JPanel {
 
 	private JButton step, simulate, restart;
-	private JLabel[] values;
+	private JFormattedTextField[] values;
 
 	public SimulationPanel (ActionListener listener) {
 		super(new BorderLayout());
-		JPanel leftPanel = new JPanel(new GridLayout(6, 1));
-    	JPanel rightPanel = new JPanel(new GridLayout(6, 1));
+		JPanel leftPanel = new JPanel(new GridLayout(0, 1));
+    	JPanel rightPanel = new JPanel(new GridLayout(0, 1));
     	add(leftPanel, BorderLayout.WEST);
     	add(rightPanel, BorderLayout.CENTER);
-		values = new JLabel[6];
+		values = new JFormattedTextField[6];
+		NumberFormat format = NumberFormat.getNumberInstance();
 
 		String[] labels = {"Army 1 Number of soldiers: ", "Army 1 Number of Tanks: ", "Army 1 Number of Planes: ",
     					   "Army 2 Number of soldiers: ", "Army 2 Number of Tanks: ", "Army 2 Number of Planes: "};
     	for (int i = 0; i < labels.length; i++) {
     		JLabel label = new JLabel(labels[i], JLabel.RIGHT);
-    		values[i] = new JLabel("0");
+    		values[i] = new JFormattedTextField(format);
+    		values[i].setColumns(10);
+    		values[i].setEditable(false);
     		label.setLabelFor(values[i]);
     		leftPanel.add(label);
     		rightPanel.add(values[i]);
@@ -42,6 +47,7 @@ public class SimulationPanel extends JPanel {
 		restart.addActionListener(listener);
 
 		JPanel bottom = new JPanel(new FlowLayout());
+		setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 		bottom.add(step);
 		bottom.add(simulate);
 		bottom.add(restart);
@@ -50,11 +56,11 @@ public class SimulationPanel extends JPanel {
 
 	public void updateSimulation(int numFootSoldiers1, int numTanks1, int numPlanes1, 
 								 int numFootSoldiers2, int numTanks2, int numPlanes2) {
-		values[0].setText(numFootSoldiers1+"");
-		values[1].setText(numTanks1+"");
-		values[2].setText(numPlanes1+"");
-		values[3].setText(numFootSoldiers2+"");
-		values[4].setText(numTanks2+"");
-		values[5].setText(numPlanes2+"");	
+		values[0].setValue(new Integer(numFootSoldiers1));
+		values[1].setValue(new Integer(numTanks1));
+		values[2].setValue(new Integer(numPlanes1));
+		values[3].setValue(new Integer(numFootSoldiers2));
+		values[4].setValue(new Integer(numTanks2));
+		values[5].setValue(new Integer(numPlanes2));	
 	}
 }
