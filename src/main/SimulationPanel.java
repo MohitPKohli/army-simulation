@@ -11,7 +11,11 @@ import java.lang.Integer;
 import javax.swing.JOptionPane;
 import javax.swing.BorderFactory;
 
-
+/**
+ * The SimulationPanel class extends JPanel and is the interface used to run the simulation. 
+ * @author  Mohit Kohli
+ * @version 1.0, May 2017
+ */
 public class SimulationPanel extends JPanel {
 
 	private JButton step, simulate, restart;

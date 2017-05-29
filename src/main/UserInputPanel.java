@@ -1,7 +1,7 @@
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.lang.Integer;
 import java.text.NumberFormat;
 import javax.swing.BorderFactory;
@@ -12,12 +12,22 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-
+/**
+ * The UserInputPanel class extends JPanel and is the interface used to collect the information
+ * for both armies from the user. 
+ * @author  Mohit Kohli
+ * @version 1.0, May 2017
+ */
 public class UserInputPanel extends JPanel {
 
 	private JButton start;
 	private JFormattedTextField[] fields; 
 	
+	/**
+	  * Constructor.
+	  * 
+	  * @param listener (required) ActionListener object that will handle the start button click. 
+	  */
 	public UserInputPanel(ActionListener listener) {
 		super(new BorderLayout());
 		JPanel leftPanel = new JPanel(new GridLayout(0, 1));
@@ -46,6 +56,12 @@ public class UserInputPanel extends JPanel {
     	add(bottom, BorderLayout.SOUTH);
 	}
 
+	/**
+	 * Returns the data collected from the text fields in the form. Creates a popup
+	 * warning if any of the fields are blank, negative, or not integers.
+	 *
+	 * @return input from the form in an int array (None if positive int not passed in)
+	 */
 	public int[] getInput() {
 		int[] input = new int[6];
 		for (int i = 0; i < input.length; i++) {

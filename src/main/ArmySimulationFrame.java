@@ -6,6 +6,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
+/**
+ * Class that acts as the JFrame for and controls a visual simulation
+ * @author  Mohit Kohli
+ * @version 1.0, May 2017
+ */
 public class ArmySimulationFrame extends JFrame implements ActionListener{
 
 	private UserInputPanel card1;
