@@ -1,15 +1,15 @@
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.lang.Integer;
+import javax.swing.BorderFactory;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
-import java.text.NumberFormat;
-import java.lang.Integer;
 import javax.swing.JOptionPane;
-import javax.swing.BorderFactory;
+import java.text.NumberFormat;
 
 /**
  * The SimulationPanel class extends JPanel and is the interface used to run the simulation. 

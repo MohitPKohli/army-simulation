@@ -1,5 +1,5 @@
-import java.util.Scanner;
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  * Class that controls both the command line simulation and visual simulation.
