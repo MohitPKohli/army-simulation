@@ -1,6 +1,6 @@
 # Army Simulation
 
-This program simulates two armies fighting each other, with each army having a certain number of foot soldiers, tanks, and planes. The simulation is turn based, with both armies inflicting damage on each other using a discretized set of first order differential Lanchaster equations. The battle is ended when one army is completely defeated (all of its units are destroyed). This program has two modes: visual and command line. 
+This program simulates two armies fighting each other, with each army having a certain number of foot soldiers, tanks, and planes. The simulation is turn based, with both armies inflicting damage on each other using a discretized set of first order differential Lanchaster equations. The randomness factor is simulated by slightly changing the output of the discretized equations using a randomly generated factor during each turn. The battle is ended when one army is completely defeated (all of its units are destroyed). This program has two modes: visual and command line. 
 
 ## Getting Started
 
