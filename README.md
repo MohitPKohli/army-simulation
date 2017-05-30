@@ -12,7 +12,7 @@ This code was developed in and tested using Java version "1.7.0_131".
 
 ### Installation
 
-Download the repository locally into an environment with a correct Java version installed. The javadocs can be accessed [here](docs/). 
+Download the repository locally into an environment with a correct Java version installed. The javadocs can be accessed [here](docs/) once the code is downloaded locally. 
  
 ## Program Execution
 
@@ -21,16 +21,16 @@ A step by step series of how to get the program to execute.
 #### Option 1: Use jar file
 
 ```
-cd location-of-army-simulation/
+cd army-simulation-master/
 java -jar ArmySimulation.jar 
 ```
 
 #### Option 2: Compile and run manually
 
 ```
-cd location-of-army-simulation/
-javac src/main/*.java
-java src/main/ArmySimulationMain
+cd army-simulation-master/src/main
+javac *.java
+java ArmySimulationMain
 ```
 
 ## Using the Program
