@@ -62,8 +62,8 @@ public class Battle {
 		double tankDamage2 = 0.001 * army1.getNumFootSoldiers() + 0.25 * army1.getNumTanks() + 0.2 * army1.getNumPlanes();
 		double planeDamage2 = 0.001 * army1.getNumFootSoldiers() + 0.1 * army1.getNumTanks() + 0.3 * army1.getNumPlanes();
 
-		army1.takeDamage((int)(e1 * footSoldierDamage1), (int)(e1 * tankDamage1), (int)(e1 * planeDamage1));
-		army2.takeDamage((int)(e2 * footSoldierDamage2), (int)(e2 * tankDamage2), (int)(e2 * planeDamage2));
+		army1.takeDamage((int)(e1 * footSoldierDamage1 + 0.9), (int)(e1 * tankDamage1 + 0.75), (int)(e1 * planeDamage1 + 0.7));
+		army2.takeDamage((int)(e2 * footSoldierDamage2 + 0.9), (int)(e2 * tankDamage2 + 0.75), (int)(e2 * planeDamage2 + 0.7));
 
 	}
 
