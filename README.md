@@ -12,7 +12,7 @@ This code was developed in and tested using Java version "1.7.0_131".
 
 ### Installation
 
-Download the repository locally into an environment with a correct Java version installed. The javadocs can be accessed [here](docs/index.html). 
+Download the repository locally into an environment with a correct Java version installed. The javadocs can be accessed [here](docs/). 
  
 ## Program Execution
 
@@ -36,6 +36,32 @@ java src/main/ArmySimulationMain
 ## Using the Program
 
 A series of steps on how to actually use the program once it is executed.
+
+#### Visual
+
+When prompted, choose visual mode.
+
+```
+Welcome to army simulation by Mohit Kohli!
+Do you want to use visual mode? (Type Y or N)
+Y
+```
+
+In the following data entry screen that pops up, enter the amount of units for each category for both armies. The values must be non-negative integers.
+
+In the following simulation window, you can click the 'Step' button to perform one turn in the battle. Clicking 'Run Full Simulation' will run all the turns until the battle is over. Click 'New Simulation' to return to the data entry screen.
+
+#### Command Line
+
+When prompted, choose command line mode.
+
+```
+Welcome to army simulation by Mohit Kohli!
+Do you want to use visual mode? (Type Y or N)
+>>> N
+```
+
+You will be prompted 
 
 ## Authors
 
